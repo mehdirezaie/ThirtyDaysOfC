@@ -1,12 +1,17 @@
 /*
-    Credit : HACKERRANK.COM
-    Mehdi Rezaie 
+    Credit : hackerrank.com
+
+    Task: save a line of input from stdin to a variable, 
+    print Hello, World. on a single line, and finally 
+    print the value of your variable on a second line.
+
+    Edited by:
+    Mehdi Rezaie, medirz90@icloud.com 
     Dec 30, 2019
 */
 
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 #include <stdlib.h>
 
 int main()
