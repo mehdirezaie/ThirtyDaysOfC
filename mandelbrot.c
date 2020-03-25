@@ -1,15 +1,17 @@
 /*
-gcc -shared -Wl,-soname,mandelbrot \
-    -o mandelbrot.so \
-    -fPIC mandelbrot.c
+    MandelBrot implementation in C
 
-see :
-https://ipython-books.github.io/54-wrapping-a-c-
-library-in-python-with-ctypes/
+    Compile it with
+    $> gcc -shared -Wl,-soname,mandelbrot -o mandelbrot.so -fPIC mandelbrot.c
+
+    based on https://ipython-books.github.io/54-wrapping-a-c-library-in-python-with-ctypes/
+
 */
 
 #include "stdio.h"
 #include "stdlib.h"
+
+void mandelbrot(int size, int iterations, int *col);
 
 void mandelbrot(int size, int iterations, int *col)
 {

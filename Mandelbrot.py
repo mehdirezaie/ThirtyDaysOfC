@@ -1,34 +1,42 @@
+'''
+    Example of Mandelbrot
+    written C wrapped for Python
 
+    Step 1: compile C
+    $> gcc -shared -Wl,-soname,mandelbrot -o mandelbrot.so -fPIC mandelbrot.c
 
-from numpy.ctypeslib import ndpointer
+    Step 2: Use the Object MandelBrot in this file to use
+
+    example
+    ---------
+    $> MB = MandelBrot()
+    $> result = MB(size, iterations)
+
+'''
 import ctypes
+import numpy as np
+from numpy.ctypeslib import ndpointer
 
 
 
-lib = ctypes.CDLL('mandelbrot.so')
-lib.mandelbrot.restype = None
-lib.mandelbrot.argtypes = (ctypes.c_int, 
-                           ctypes.c_int,
-                           ndpointer(ctypes.c_int))
-
-
-#def mandelbrot():
-#    lib = ctypes.CDLL('mandelbrot.so')
-#    lib.mandelbrot.restype = None
-#    lib.mandelbrot.argtypes = (ctypes.c_int, 
-#                               ctypes.c_int,
-#                               ndpointer(ctypes.c_int))
-#
-#    mandelbrot = lib.mandelbrot
-#    return mandelbrot
-
-def mandelbrot(size, iterations):
-    global lib
-    import  numpy as np
-    col = np.empty((size, size), dtype=np.int32)
-    #array_type = ctypes.c_int * size
-    lib.mandelbrot(ctypes.c_int(size),
-                   ctypes.c_int(iterations),
-                   col)
-    return col
-
+class MandelBrot:
+    
+    def __init__(self):
+        
+        # path to the shared library
+        self.lib = ctypes.CDLL(r'/home/medirz90/Downloads/github/ThirtyDaysOfC/mandelbrot.so')
+        
+        self.lib.mandelbrot.restype = None
+        self.lib.mandelbrot.argtypes = (ctypes.c_int, 
+                                   ctypes.c_int,
+                                   ndpointer(ctypes.c_int))
+    
+    def __call__(self, size, iterations):
+        
+        # placeholder for the output
+        col = np.empty((size, size), dtype=np.int32)
+        
+        self.lib.mandelbrot(ctypes.c_int(size),
+                            ctypes.c_int(iterations),
+                            col)
+        return col

@@ -1,3 +1,7 @@
+/*
+    Code to compute the number Pi = 3.14
+
+*/
 #include <stdio.h> 
 #include <time.h>
 void Pi(int num_steps)
