@@ -22,7 +22,7 @@ float pi(int num_steps)
           x = (i+0.5)*step;
           sum = sum + 4.0/(1.0+x*x);
      }
-     end= clock();
+     end = clock();
      return step * sum;
 }
 
