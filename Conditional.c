@@ -1,3 +1,10 @@
+/*
+    Conditional statements
+
+*/
+
+
+
 #include <assert.h>
 #include <limits.h>
 #include <math.h>
@@ -16,15 +23,17 @@ void decide(int N)
         printf("Weird\n");
     }
     else if (( N >= 2) & (N <= 5)){
-        printf("Not Weird\n");    
+        printf("Not Weird\n");
     }
     else if ((N >= 6) & (N <= 20)){
         printf("Weird\n");
     }
     else if (N > 20){
         printf("Not Weird\n");
+    } else {
+        printf("Invalid number\n");
     }
-}    
+}
 
 int main()
 {
