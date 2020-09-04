@@ -42,15 +42,18 @@ int main() {
             break;
         }   
     }
+
+    // sorted array    
+    for (int i = 0; i<n; i++){
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+
     // print
     printf("Array is sorted in %d swaps.\n", numberOfSwaps);    
     printf("First Element: %d\n", a[0]);
     printf("Last Element: %d\n", a[n-1]);
 
-    /*
-    for (int i = 0; i<n; i++){
-        printf("a[%d] = %d\n", i, a[i]);
-    }
-    */
+
     return 0;
 }
