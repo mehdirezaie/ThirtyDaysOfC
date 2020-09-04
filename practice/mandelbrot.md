@@ -118,4 +118,4 @@ if __name__ == '__main__':
 ```
 Then, you will get the mandelbrot.png: 
 
-<img src="https://github.com/mehdirezaie/ThirtyDaysOfC/blob/master/mandelbrot.png" width=60%>
+<img src="https://github.com/mehdirezaie/ThirtyDaysOfC/blob/master/practice/mandelbrot.png" width=60%>
