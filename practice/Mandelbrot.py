@@ -25,7 +25,7 @@ class MandelBrot:
         
         # path to the shared library
         #self.lib = ctypes.CDLL(r'/home/medirz90/Downloads/github/ThirtyDaysOfC/mandelbrot.so')
-        self.lib = ctypes.CDLL(r'/Users/mehdi/github/ThirtyDaysOfC/mandelbrot.so')
+        self.lib = ctypes.CDLL(r'./mandelbrot.so')
 
         self.lib.mandelbrot.restype = None
         self.lib.mandelbrot.argtypes = (ctypes.c_int, 
